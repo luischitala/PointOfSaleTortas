@@ -6,6 +6,7 @@
   <title>Inventory System</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="icon" href="vistas/img/plantilla/chefhat.png">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="vistas/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -45,7 +46,23 @@ include "modulos/cabezote.php";
 include "modulos/menu.php";
 
 // contenido
-include "modulos/contenido.php";
+if(isset($_GET["ruta"])){
+  if($_GET["ruta"] == "inicio" ||
+     $_GET["ruta"] == "usuarios" ||
+     $_GET["ruta"] == "categorias" ||
+     $_GET["ruta"] == "productos" ||
+     $_GET["ruta"] == "clientes" ||
+     $_GET["ruta"] == "ventas" ||
+     $_GET["ruta"] == "crear-venta" ||
+     $_GET["ruta"] == "reportes" ){
+    include "modulos/".$_GET["ruta"].".php";
+  }else{
+    include "modulos/404.php";
+  }
+}else{
+  include "modulos/inicio.php";
+}
+
 // Footer
 include "modulos/footer.php"
 ?>
