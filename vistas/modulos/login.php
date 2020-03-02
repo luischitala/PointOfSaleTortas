@@ -1,4 +1,3 @@
-
 <div id="back"></div>
 
 <div class="login-box">
@@ -38,6 +37,13 @@
         </div>
 
       </div>
+
+      <?php
+
+        $login = new ControladorUsuarios();
+        $login -> ctrIngresoUsuario();
+        
+      ?>
 
     </form>
 
