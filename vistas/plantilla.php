@@ -35,11 +35,15 @@
 <script src="vistas/dist/js/adminlte.min.js"></script>
 
 </head>
-<body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
+<body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
 <!-- Site wrapper -->
 <div class="wrapper">
 
 <?php
+if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
+
+
+echo '<div class="wrapper>';
 // cabezote
 include "modulos/cabezote.php";
 // menu
@@ -64,7 +68,11 @@ if(isset($_GET["ruta"])){
 }
 
 // Footer
-include "modulos/footer.php"
+include "modulos/footer.php";
+echo '</div>';
+}else{
+  include "modulos/login.php";
+}
 ?>
   
 </div>
