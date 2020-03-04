@@ -22,7 +22,7 @@ class ControladorUsuarios{
 
 				$respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 
-				if($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $_POST["ingPassword"]){
+				if($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar){
 
 					if($respuesta["estado"] == 1){
 
@@ -37,7 +37,7 @@ class ControladorUsuarios{
 						REGISTRAR FECHA PARA SABER EL ÚLTIMO LOGIN
 						=============================================*/
 
-						date_default_timezone_set('America/Bogota');
+						date_default_timezone_set('America/Mexico_city');
 
 						$fecha = date('Y-m-d');
 						$hora = date('H:i:s');
