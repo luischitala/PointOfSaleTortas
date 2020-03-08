@@ -149,7 +149,7 @@ MODAL AGREGAR Producto
 
           <div class="box-body">
 
-            <!-- ENTRADA PARA EL NOMBRE -->
+            <!-- ENTRADA PARA EL CÖDIGO -->
             
             <div class="form-group">
               
@@ -157,7 +157,7 @@ MODAL AGREGAR Producto
               
                 <span class="input-group-addon"><i class="fa fa-code"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoCodigo" placeholder="Ingresar Código" required>
+                <input type="text" class="form-control input-lg" id="nuevoCodigo" name="nuevoCodigo" placeholder="Ingresar Código" readonly required>
 
               </div>
 
@@ -186,16 +186,21 @@ MODAL AGREGAR Producto
               
                 <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-                <select class="form-control input-lg" name="nuevaCategoria">
+                <select class="form-control input-lg" id="nuevaCategoria" name="nuevaCategoria" required>
                   
                   <option value="">Selecionar Categoria</option>
+                  <?php
+                  $item = null;
+                  $valor = null;
 
-                  <option value="Taladros">Taladros</option>
+                  $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+                  
+                  foreach($categorias as $key => $value){
+                    echo '<option value="'.$value["id"].'">'.$value["categoria"].'</option>';
+                  }
+                  ?>
 
-                  <option value="Equipos para construccion">Equipos para construcción</option>
-
-                  <option value="Andamios">Andamios</option>
-
+              
                 </select>
 
               </div>
