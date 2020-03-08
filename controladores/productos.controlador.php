@@ -80,6 +80,7 @@ class ControladorProductos{
 
              }
                 
+             
                 $tabla = "productos";
 
 				$datos = array("id_categoria" => $_POST["nuevaCategoria"],
@@ -120,7 +121,7 @@ class ControladorProductos{
 
 					swal({
 						  type: "error",
-						  title: "¡El producto no puede ir con los campos vacíos o llevar caracteres especiales!",
+						  title: "¡El producto no puede ir con los campos vacíos o llevar caracteres especialess!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
